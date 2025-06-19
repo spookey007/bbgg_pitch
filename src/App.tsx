@@ -377,7 +377,7 @@ function App() {
   const sectionRefs = sections.map(() => useRef<HTMLElement>(null))
   const touchStartY = useRef<number | null>(null)
   const touchEndY = useRef<number | null>(null)
-  const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
+  const scrollTimeout = useRef<number | null>(null)
 
   const headerHeight = 100; // px, adjust to your actual header height
 
@@ -416,7 +416,7 @@ function App() {
     }
 
     if (scrollTimeout.current) clearTimeout(scrollTimeout.current);
-    scrollTimeout.current = setTimeout(() => setIsScrolling(false), 1000);
+    scrollTimeout.current = setTimeout(() => setIsScrolling(false), 1000) as unknown as number;
   };
 
   // Debounced wheel scroll handler
