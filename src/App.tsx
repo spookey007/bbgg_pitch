@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import { ChevronDownIcon, ChevronUpIcon, ChartBarIcon, CurrencyDollarIcon, UserGroupIcon, ShieldCheckIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { motion, AnimatePresence } from 'framer-motion'
+import { ChartBarIcon, CurrencyDollarIcon, UserGroupIcon, ShieldCheckIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import './App.css'
 
 interface Section {
@@ -379,8 +378,6 @@ function App() {
   const touchStartY = useRef<number | null>(null)
   const touchEndY = useRef<number | null>(null)
   const scrollTimeout = useRef<NodeJS.Timeout | null>(null)
-  const { scrollYProgress } = useScroll()
-  const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0])
 
   const headerHeight = 100; // px, adjust to your actual header height
 
