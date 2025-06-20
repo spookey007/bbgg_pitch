@@ -17,27 +17,12 @@ const sections: Section[] = [
     title: 'BBGG Staking Bot',
     subtitle: 'Revolutionizing Cryptocurrency Staking',
     content: (
-      <div className="flex flex-col items-center justify-center min-h-[70vh] w-full text-center gap-2 md:gap-8 px-2">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="section-title text-base sm:text-lg md:text-5xl mb-2"
-        >
-          BBGG Staking Bot
-        </motion.h1>
-        <motion.p 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="section-subtitle text-sm sm:text-base md:text-2xl mb-2"
-        >
-          Revolutionizing Cryptocurrency Staking
-        </motion.p>
+      <div className="flex flex-col items-center justify-center min-h-[60vh] sm:min-h-[70vh] w-full text-center gap-4 sm:gap-6 md:gap-8 px-3 sm:px-4">
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-sm sm:text-base md:text-lg text-secondary max-w-2xl mx-auto mb-2 md:mb-8"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl text-secondary max-w-3xl mx-auto mb-4 sm:mb-6 md:mb-8 leading-relaxed"
         >
           The Future of Automated Cryptocurrency Staking. <span className="font-bold text-hulyBlue">Secure. Effortless. Multi-chain.</span> <span className="text-hulyPink font-bold">Built for the next generation of investors.</span>
         </motion.p>
@@ -45,9 +30,9 @@ const sections: Section[] = [
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6"
         >
-          <button className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-4 py-2 md:px-8 md:py-4 rounded-full font-bold text-sm md:text-lg shadow hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 border border-black/10">
+          <button className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-xl hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 border border-black/10 w-full sm:w-auto">
             Request Demo
           </button>
           {/* <button className="bg-white/90 text-black px-8 py-4 rounded-full font-bold text-lg border border-hulyPurple/20 hover:bg-hulyGlass transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-hulyBlue/40">
@@ -61,7 +46,7 @@ const sections: Section[] = [
     id: 'problem',
     title: 'The Problem',
     content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
           {
             title: 'Complex staking processes',
@@ -99,11 +84,11 @@ const sections: Section[] = [
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="glass p-6 rounded-xl shadow hover:bg-hulyGlass transition-all duration-300"
+            className="glass p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl hover:bg-hulyGlass transition-all duration-300 border border-black/5"
           >
-            <div className="text-4xl mb-4">{problem.icon}</div>
-            <h3 className="font-bold text-xl mb-2 section-title" style={{fontSize: '1.5rem', marginBottom: '0.5rem'}}>{problem.title}</h3>
-            <p className="text-secondary">{problem.description}</p>
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">{problem.icon}</div>
+            <h3 className="font-bold text-lg sm:text-xl mb-2 sm:mb-3 section-title">{problem.title}</h3>
+            <p className="text-secondary text-sm sm:text-base leading-relaxed">{problem.description}</p>
           </motion.div>
         ))}
       </div>
@@ -113,15 +98,13 @@ const sections: Section[] = [
     id: 'solution',
     title: 'Our Solution',
     content: (
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
           {
             title: 'Multi-Chain Support',
             description: '14 major cryptocurrencies supported with seamless integration',
             icon: '🔗',
-            features: [
-              'BTC', 'ETH', 'SOL', 'SUI', 'LINK', 'XRP', 'AVAX', 'DOGE', 'ADA', 'APT', 'BNB', 'DOT', 'OP', 'LTC'
-            ]
+            features: ['BTC', 'ETH', 'SOL', 'SUI', 'LINK', 'XRP', 'AVAX', 'DOGE', 'ADA', 'APT', 'BNB', 'DOT', 'OP', 'LTC']
           },
           {
             title: 'Automated Staking',
@@ -142,16 +125,15 @@ const sections: Section[] = [
             features: ['Instant calculations', 'Transparent distribution', 'Tax reporting']
           },
           {
-            title: 'Admin Controls',
-            description: 'Comprehensive management dashboard',
-            icon: '👨‍💼',
-            features: ['User management', 'System monitoring', 'Maintenance mode']
-          },
-          {
-            title: 'Telegram Bot',
-            description: 'User-friendly interface with 24/7 availability',
-            icon: '🤖',
-            features: ['Instant notifications', 'Quick actions', 'Portfolio tracking']
+            title: 'Admin & Bot',
+            description: 'Full control via dashboard and our Telegram bot.',
+            icon: '👨‍💼🤖',
+            features: [
+              'User & System Management',
+              'Instant Notifications',
+              'Portfolio Tracking',
+              'Quick Actions via Bot'
+            ]
           }
         ].map((feature, index) => (
           <motion.div
@@ -159,25 +141,28 @@ const sections: Section[] = [
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="glass p-2 sm:p-4 md:p-6 rounded-lg sm:rounded-xl shadow hover:bg-hulyGlass transition-all duration-300 w-full max-w-xs mx-auto"
+            className="glass p-6 rounded-2xl shadow-lg flex flex-col items-center text-center h-full border border-black/5"
           >
             <div className="text-4xl mb-4">{feature.icon}</div>
-            <h3 className="font-bold text-xl mb-2 section-title" style={{fontSize: '1.5rem', marginBottom: '0.5rem'}}>{feature.title}</h3>
-            <p className="text-secondary mb-4">{feature.description}</p>
+            <h3 className="font-bold text-xl mb-3">{feature.title}</h3>
+            <p className="text-secondary text-base mb-6 leading-relaxed flex-grow">{feature.description}</p>
+            
             {feature.title === 'Multi-Chain Support' ? (
-              <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-1 sm:gap-2 mt-1 sm:mt-2 w-full overflow-x-auto">
-                {feature.features.map((f, i) => (
-                  <li key={i} className="px-2 py-1 rounded-full bg-white/80 text-black font-semibold shadow text-center border border-hulyBlue/30 text-sm">
-                    {f}
-                  </li>
-                ))}
-              </ul>
+              <div className="w-full mt-auto">
+                <ul className="grid grid-cols-2 gap-2">
+                  {feature.features.map((f) => (
+                    <li key={f} className="px-2 py-1.5 rounded-lg bg-white/80 text-black font-semibold shadow-sm text-center border border-hulyBlue/30 text-sm">
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ) : (
-              <ul className="space-y-2">
+              <ul className="space-y-3 text-left self-start w-full mt-auto">
                 {feature.features.map((f, i) => (
-                  <li key={i} className="flex items-center text-sm text-secondary">
-                    <span className="w-1.5 h-1.5 bg-hulyBlue rounded-full mr-2"></span>
-                    {f}
+                  <li key={i} className="flex items-start text-sm text-secondary">
+                    <span className="w-2 h-2 bg-hulyBlue rounded-full mr-3 mt-1.5 flex-shrink-0"></span>
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
@@ -191,31 +176,31 @@ const sections: Section[] = [
     id: 'market',
     title: 'Market Opportunity',
     content: (
-      <div className="space-y-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="space-y-8 sm:space-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {[
-            { value: '$2.1T', label: 'Total Crypto Market Cap', icon: <ChartBarIcon className="w-8 h-8 text-hulyPurple" /> },
-            { value: '$300B', label: 'Staking Market Size', icon: <CurrencyDollarIcon className="w-8 h-8 text-hulyPurple" /> },
-            { value: '25%', label: 'CAGR Growth', icon: <ChartBarIcon className="w-8 h-8 text-hulyPurple" /> },
-            { value: '50M+', label: 'Active Stakers', icon: <UserGroupIcon className="w-8 h-8 text-hulyPurple" /> }
+            { value: '$2.1T', label: 'Total Crypto Market Cap', icon: <ChartBarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
+            { value: '$300B', label: 'Staking Market Size', icon: <CurrencyDollarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
+            { value: '25%', label: 'CAGR Growth', icon: <ChartBarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
+            { value: '50M+', label: 'Active Stakers', icon: <UserGroupIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> }
           ].map((stat, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
-              className="glass p-6 rounded-xl shadow text-center hover:bg-hulyGlass transition-all duration-300"
+              className="glass p-4 sm:p-6 rounded-2xl shadow-lg text-center hover:shadow-xl hover:bg-hulyGlass transition-all duration-300 border border-black/5"
             >
-              <div className="flex justify-center mb-4">{stat.icon}</div>
-              <div className="text-4xl font-bold text-hulyPurple mb-2">{stat.value}</div>
-              <div className="text-secondary">{stat.label}</div>
+              <div className="flex justify-center mb-3 sm:mb-4">{stat.icon}</div>
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-hulyPurple mb-2">{stat.value}</div>
+              <div className="text-secondary text-sm sm:text-base">{stat.label}</div>
             </motion.div>
           ))}
         </div>
         
-        <div className="glass p-8 rounded-xl shadow">
-          <h3 className="section-title text-2xl mb-6">Market Growth Projection</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="glass p-6 sm:p-8 rounded-2xl shadow-lg border border-black/5">
+          <h3 className="section-title text-xl sm:text-2xl mb-4 sm:mb-6">Market Growth Projection</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {[
               { year: '2024', value: '$300B', growth: '25%' },
               { year: '2025', value: '$375B', growth: '25%' },
@@ -226,11 +211,11 @@ const sections: Section[] = [
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-center p-4 glass rounded-xl"
+                className="text-center p-4 sm:p-6 glass rounded-2xl border border-black/5"
               >
-                <div className="text-2xl font-bold text-hulyPurple">{projection.year}</div>
-                <div className="text-xl font-semibold mt-2 text-black">{projection.value}</div>
-                <div className="text-green-600 mt-1">{projection.growth} Growth</div>
+                <div className="text-xl sm:text-2xl font-bold text-hulyPurple">{projection.year}</div>
+                <div className="text-lg sm:text-xl font-semibold mt-2 text-black">{projection.value}</div>
+                <div className="text-green-600 mt-1 text-sm sm:text-base">{projection.growth} Growth</div>
               </motion.div>
             ))}
           </div>
@@ -242,27 +227,27 @@ const sections: Section[] = [
     id: 'security',
     title: 'Security & Compliance',
     content: (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
         {[
           {
             title: 'Enterprise Security',
             description: 'Multi-layer security architecture with encryption and audit trails',
-            icon: <ShieldCheckIcon className="w-8 h-8 text-hulyPurple" />
+            icon: <ShieldCheckIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" />
           },
           {
             title: 'Compliance Ready',
             description: 'Built-in KYC/AML features and regulatory reporting',
-            icon: <ShieldCheckIcon className="w-8 h-8 text-hulyPurple" />
+            icon: <ShieldCheckIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" />
           },
           {
             title: 'Smart Contract Audits',
             description: 'Regular security audits by leading blockchain security firms',
-            icon: <ShieldCheckIcon className="w-8 h-8 text-hulyPurple" />
+            icon: <ShieldCheckIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" />
           },
           {
             title: 'Insurance Coverage',
             description: 'Comprehensive insurance for digital assets',
-            icon: <ShieldCheckIcon className="w-8 h-8 text-hulyPurple" />
+            icon: <ShieldCheckIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" />
           }
         ].map((item, index) => (
           <motion.div
@@ -270,13 +255,13 @@ const sections: Section[] = [
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
-            className="glass p-6 rounded-xl shadow hover:bg-hulyGlass transition-all duration-300"
+            className="glass p-4 sm:p-6 rounded-2xl shadow-lg hover:shadow-xl hover:bg-hulyGlass transition-all duration-300 border border-black/5"
           >
-            <div className="flex items-center mb-4">
+            <div className="flex items-center mb-3 sm:mb-4">
               {item.icon}
-              <h3 className="font-bold text-xl ml-3 section-title" style={{fontSize: '1.5rem', marginBottom: 0}}>{item.title}</h3>
+              <h3 className="font-bold text-lg sm:text-xl ml-3 section-title">{item.title}</h3>
             </div>
-            <p className="text-secondary">{item.description}</p>
+            <p className="text-secondary text-sm sm:text-base leading-relaxed">{item.description}</p>
           </motion.div>
         ))}
       </div>
@@ -286,31 +271,31 @@ const sections: Section[] = [
     id: 'investment',
     title: 'Investment Opportunity',
     content: (
-      <div className="max-w-3xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-6 sm:space-y-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="glass p-8 rounded-xl shadow"
+          className="glass p-6 sm:p-8 rounded-2xl shadow-lg border border-black/5"
         >
-          <h3 className="section-title text-2xl mb-6">Seed Round: $2M</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <h3 className="section-title text-xl sm:text-2xl mb-4 sm:mb-6">Seed Round: $2M</h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             {[
               { label: 'Development', value: '40%', color: 'bg-hulyPurple' },
               { label: 'Marketing', value: '30%', color: 'bg-hulyBlue' },
               { label: 'Operations', value: '20%', color: 'bg-hulyPink' },
               { label: 'Legal/Compliance', value: '10%', color: 'bg-hulyBlue' }
             ].map((item, index) => (
-              <div key={index} className="space-y-2">
+              <div key={index} className="space-y-2 sm:space-y-3">
                 <div className="flex justify-between items-center">
-                  <span className="font-semibold text-secondary">{item.label}</span>
-                  <span className="text-hulyPurple font-bold">{item.value}</span>
+                  <span className="font-semibold text-secondary text-sm sm:text-base">{item.label}</span>
+                  <span className="text-hulyPurple font-bold text-sm sm:text-base">{item.value}</span>
                 </div>
-                <div className="h-2 bg-hulyGlass rounded-full overflow-hidden">
+                <div className="h-2 sm:h-3 bg-hulyGlass rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
                     whileInView={{ width: item.value }}
                     transition={{ duration: 1, delay: index * 0.2 }}
-                    className={`h-full ${item.color}`}
+                    className={`h-full ${item.color} rounded-full`}
                   />
                 </div>
               </div>
@@ -322,10 +307,10 @@ const sections: Section[] = [
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="glass p-8 rounded-xl shadow"
+          className="glass p-6 sm:p-8 rounded-2xl shadow-lg border border-black/5"
         >
-          <h3 className="section-title text-2xl mb-6">Use of Funds</h3>
-          <div className="space-y-4">
+          <h3 className="section-title text-xl sm:text-2xl mb-4 sm:mb-6">Use of Funds</h3>
+          <div className="space-y-3 sm:space-y-4">
             {[
               'Expand development team',
               'Launch marketing campaigns',
@@ -335,8 +320,8 @@ const sections: Section[] = [
               'Security audits'
             ].map((item, index) => (
               <div key={index} className="flex items-center space-x-3">
-                <div className="w-2 h-2 bg-hulyBlue rounded-full"></div>
-                <span className="text-secondary">{item}</span>
+                <div className="w-2 h-2 bg-hulyBlue rounded-full flex-shrink-0"></div>
+                <span className="text-secondary text-sm sm:text-base">{item}</span>
               </div>
             ))}
           </div>
@@ -352,12 +337,12 @@ const sections: Section[] = [
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="p-8 rounded-xl text-center"
+          className="p-6 sm:p-8 rounded-2xl text-center glass shadow-lg border border-black/5"
         >
           {/* <h3 className="section-title text-2xl mb-6">Ready to Invest?</h3> */}
-          <p className="text-secondary mb-8">Join us in revolutionizing the cryptocurrency staking industry</p>
-          <div className="flex justify-center space-x-4">
-            <button className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-8 py-3 rounded-full font-bold hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 shadow">
+          <p className="text-secondary mb-6 sm:mb-8 text-base sm:text-lg">Join us in revolutionizing the cryptocurrency staking industry</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
+            <button className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg">
               Schedule a Call
             </button>
             {/* <button className="border-2 border-hulyPurple/20 text-black px-8 py-3 rounded-full font-bold hover:bg-hulyGlass transition-all duration-300">
@@ -505,18 +490,18 @@ function App() {
       </div>
 
       {/* Logo always in top left, outside nav */}
-      <div className="fixed top-4 left-4 z-[60] flex items-center gap-2">
-        <img src="/bbgg.jpg" alt="BBGG Logo" className="h-12 w-12 sm:h-16 sm:w-16 rounded-full object-cover border-2 border-black/10 shadow-lg transition-all duration-300" />
+      <div className="fixed top-3 sm:top-4 left-3 sm:left-4 z-[60] flex items-center gap-2">
+        <img src="/bbgg.jpg" alt="BBGG Logo" className="h-10 w-10 sm:h-12 sm:w-12 md:h-16 md:w-16 rounded-2xl sm:rounded-full object-cover border-2 border-black/10 shadow-lg transition-all duration-300" />
         {/* <span className="font-bold text-xl sm:text-2xl text-hulyPurple tracking-tight hidden sm:inline">BBGG</span> */}
       </div>
 
       {/* Hamburger icon for mobile */}
       <button
-        className="fixed top-6 right-4 z-[70] sm:hidden bg-white/80 border border-black/10 rounded-full p-2 shadow"
+        className="fixed top-3 sm:top-6 right-3 sm:right-4 z-[70] sm:hidden bg-white/90 border border-black/10 rounded-2xl p-2.5 shadow-lg hover:bg-white/95 transition-all duration-200"
         onClick={() => setMobileMenuOpen(true)}
         aria-label="Open menu"
       >
-        <Bars3Icon className="h-7 w-7 text-hulyPurple" />
+        <Bars3Icon className="h-6 w-6 text-hulyPurple" />
       </button>
 
       {/* Mobile menu overlay */}
@@ -526,14 +511,14 @@ function App() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-white/95 flex flex-col items-center justify-center gap-8 px-6"
+            className="fixed inset-0 z-[100] bg-white/95 backdrop-blur-sm flex flex-col items-center justify-center gap-6 px-6"
           >
             <button
-              className="absolute top-6 right-6 bg-hulyPurple/10 rounded-full p-2"
+              className="absolute top-4 right-4 bg-hulyPurple/10 rounded-2xl p-2.5 hover:bg-hulyPurple/20 transition-all duration-200"
               onClick={() => setMobileMenuOpen(false)}
               aria-label="Close menu"
             >
-              <XMarkIcon className="h-8 w-8 text-hulyPurple" />
+              <XMarkIcon className="h-7 w-7 text-hulyPurple" />
             </button>
             {sections.map((section, index) => (
               <button
@@ -542,10 +527,10 @@ function App() {
                   setMobileMenuOpen(false);
                   navigateToSection(index);
                 }}
-                className={`text-2xl font-bold px-6 py-3 rounded-full transition-all duration-200 w-full text-center
+                className={`text-xl sm:text-2xl font-bold px-6 py-4 rounded-2xl transition-all duration-200 w-full text-center shadow-sm hover:shadow-md
                   ${currentSection === index
-                    ? 'bg-gradient-to-r from-hulyPurple to-hulyBlue text-black shadow-md'
-                    : 'text-hulyPurple hover:bg-hulyGlass'}
+                    ? 'bg-gradient-to-r from-hulyPurple to-hulyBlue text-black shadow-lg'
+                    : 'text-hulyPurple hover:bg-hulyGlass border border-hulyPurple/20'}
                 `}
               >
                 {section.title}
@@ -557,7 +542,7 @@ function App() {
                 setMobileMenuOpen(false);
                 navigateToSection(sections.length-1);
               }}
-              className="bg-gradient-to-r from-hulyBlue to-hulyPurple text-black px-8 py-3 rounded-full font-bold shadow hover:from-hulyPurple hover:to-hulyBlue transition-all duration-200 border border-black/10 text-xl mt-4"
+              className="bg-gradient-to-r from-hulyBlue to-hulyPurple text-black px-8 py-4 rounded-2xl font-bold shadow-lg hover:from-hulyPurple hover:to-hulyBlue transition-all duration-200 border border-black/10 text-xl mt-4 w-full text-center"
             >
               Get Started
             </a>
@@ -572,17 +557,17 @@ function App() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        <div className="glass pointer-events-auto mt-6 sm:mt-8 w-[100vw] max-w-none flex-col sm:flex-row items-center justify-center px-2 sm:px-12 py-2 sm:py-4 mx-auto shadow-glass border border-black/10 backdrop-blur-xl rounded-2xl gap-2 sm:gap-0 hidden sm:flex">
+        <div className="glass pointer-events-auto mt-3 sm:mt-4 md:mt-6 lg:mt-8 w-[92vw] sm:w-[95vw] md:w-[100vw] max-w-none flex-col sm:flex-row items-center justify-center px-3 sm:px-4 md:px-6 lg:px-12 py-3 sm:py-3 md:py-4 mx-auto shadow-glass border border-black/10 backdrop-blur-xl rounded-2xl sm:rounded-2xl gap-3 sm:gap-0 hidden sm:flex">
           {/* Nav links center, responsive wrap on xs */}
-          <div className="flex-1 w-full flex flex-wrap justify-center items-center gap-2 sm:gap-4">
+          <div className="flex-1 w-full flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4">
             {sections.map((section, index) => (
               <button
                 key={section.id}
                 onClick={() => navigateToSection(index)}
-                className={`px-3 sm:px-4 py-2 rounded-full font-bold text-sm sm:text-base transition-all duration-200 mx-1 whitespace-nowrap
+                className={`px-2.5 sm:px-3 md:px-4 lg:px-5 py-1.5 sm:py-2 rounded-xl sm:rounded-full font-bold text-xs sm:text-sm md:text-base transition-all duration-200 mx-0.5 sm:mx-1 whitespace-nowrap shadow-sm hover:shadow-md
                   ${currentSection === index
-                    ? 'bg-gradient-to-r from-hulyPurple to-hulyBlue text-black shadow-md'
-                    : 'text-black hover:text-hulyPurple hover:bg-hulyGlass'}
+                    ? 'bg-gradient-to-r from-hulyPurple to-hulyBlue text-black shadow-lg'
+                    : 'text-black hover:text-hulyPurple hover:bg-hulyGlass border border-transparent hover:border-hulyPurple/20'}
                 `}
                 style={{ letterSpacing: '0.01em' }}
               >
@@ -591,9 +576,9 @@ function App() {
             ))}
           </div>
           {/* CTA right, stack on mobile */}
-          <div className="flex items-center gap-2 ml-0 sm:ml-4 mt-2 sm:mt-0 w-full sm:w-auto justify-center">
+          <div className="flex items-center gap-1.5 sm:gap-2 ml-0 sm:ml-2 md:ml-3 lg:ml-4 mt-1 sm:mt-0 w-full sm:w-auto justify-center">
             <a href="#contact" onClick={() => navigateToSection(sections.length-1)}
-              className="bg-gradient-to-r from-hulyBlue to-hulyPurple text-black px-5 sm:px-6 py-2 rounded-full font-bold shadow hover:from-hulyPurple hover:to-hulyBlue transition-all duration-200 border border-black/10 text-sm sm:text-base">
+              className="bg-gradient-to-r from-hulyBlue to-hulyPurple text-black px-3.5 sm:px-4 md:px-5 lg:px-6 py-1.5 sm:py-2 rounded-xl sm:rounded-full font-bold shadow-md hover:shadow-lg hover:from-hulyPurple hover:to-hulyBlue transition-all duration-200 border border-black/10 text-xs sm:text-sm md:text-base">
               Get Started
             </a>
           </div>
@@ -601,7 +586,7 @@ function App() {
       </motion.nav>
 
       {/* Main Content with top padding for header */}
-      <div className="pt-[100px]">
+      <div className="pt-[80px] sm:pt-[100px]">
         {/* All Sections including Hero */}
         <main className="relative">
           {sections.map((section, index) => (
@@ -618,7 +603,7 @@ function App() {
                 duration: 0.5,
                 ease: [0.4, 0, 0.2, 1],
               }}
-              className={`min-h-screen top-10 flex items-center justify-center px-4 py-20 md:py-0 ${currentSection === index ? '' : 'pointer-events-none'}`}
+              className={`w-full min-h-screen flex justify-center items-center px-4 md:px-6 py-20 sm:py-24 ${currentSection === index ? '' : 'pointer-events-none'}`}
             >
               <motion.div 
                 className="max-w-7xl w-full mx-auto"
@@ -627,7 +612,7 @@ function App() {
                 transition={{ duration: 0.5 }}
               >
                 <motion.div 
-                  className="glass p-2 sm:p-4 md:p-10 md:mb-8 mb-2 rounded-lg sm:rounded-xl md:rounded-3xl w-full max-w-full"
+                  className="glass p-4 sm:p-6 md:p-8 lg:p-10 md:mb-8 mb-4 rounded-2xl sm:rounded-3xl w-full max-w-full shadow-lg hover:shadow-xl transition-all duration-300"
                   initial={{ y: 20, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
@@ -635,7 +620,7 @@ function App() {
                   <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="section-title text-base sm:text-lg md:text-5xl mb-2"
+                    className="section-title text-center text-3xl md:text-5xl mb-4 md:mb-8 font-bold"
                   >
                     {section.title}
                   </motion.h2>
@@ -644,7 +629,7 @@ function App() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
-                      className="section-subtitle text-sm sm:text-base md:text-2xl mb-2"
+                      className="section-subtitle text-center text-lg md:text-2xl mb-8 md:mb-12 text-secondary max-w-3xl mx-auto"
                     >
                       {section.subtitle}
                     </motion.p>
