@@ -9,39 +9,46 @@
   </head>
   <body>
     <div id="root"></div>
-    <call-us 
-      phonesystem-url="https://1592.3cx.cloud" 
-      style="position:fixed;font-size:16px;line-height:17px;z-index: 99999;right: 20px; bottom: 20px;" 
-      id="wp-live-chat-by-3CX" 
-      minimized="true" 
-      animation-style="noanimation" 
-      party="LiveChat801878" 
-      minimized-style="bubbleright" 
-      allow-call="false" 
-      allow-video="false" 
-      allow-soundnotifications="true" 
-      enable-mute="true" 
-      enable-onmobile="true" 
-      offline-enabled="true" 
-      enable="true" 
-      ignore-queueownership="false" 
-      authentication="both" 
-      show-operator-actual-name="true" 
-      aknowledge-received="true" 
-      gdpr-enabled="false" 
-      message-userinfo-format="both" 
-      message-dateformat="both" 
-      lang="browser" 
-      button-icon-type="default" 
-      greeting-visibility="none" 
-      greeting-offline-visibility="none" 
-      chat-delay="2000" 
-      enable-direct-call="false" 
-      enable-ga="false"
-    ></call-us>
+    <call-us-selector phonesystem-url="https://1592.3cx.cloud" party="LiveChat801878"></call-us-selector>
     <script defer src="https://downloads-global.3cx.com/downloads/livechatandtalk/v1/callus.js" id="tcx-callus-js" charset="utf-8"></script>
     <script type="text/javascript">
-      // Optionally, you can add any custom initialization here if needed
+      // Global function to open 3CX chat modal
+      window.open3CXChat = function() {
+        // Wait for 3CX to load and then trigger the chat
+        const waitFor3CX = function(attempts = 0) {
+          const chatButton = document.getElementById('wplc-chat-button');
+          console.log('Looking for 3CX chat button, attempt:', attempts + 1);
+          
+          if (chatButton) {
+            console.log('3CX chat button found, clicking...');
+            chatButton.click();
+            return true;
+          } else if (attempts < 20) {
+            // Retry for up to 10 seconds (20 attempts * 500ms)
+            setTimeout(() => waitFor3CX(attempts + 1), 500);
+            return false;
+          } else {
+            console.log('3CX chat button not found after 10 seconds');
+            // Fallback: try to find any 3CX related element
+            const any3CXElement = document.querySelector('[id*="wplc"], [class*="wplc"], [id*="3cx"], [class*="3cx"]');
+            if (any3CXElement) {
+              console.log('Found 3CX element, attempting to click:', any3CXElement);
+              any3CXElement.click();
+            }
+            return false;
+          }
+        };
+        
+        waitFor3CX();
+      };
+      
+      // Also try to trigger chat when 3CX script loads
+      document.addEventListener('DOMContentLoaded', function() {
+        // Wait a bit for 3CX to initialize
+        setTimeout(() => {
+          console.log('3CX should be loaded by now');
+        }, 2000);
+      });
     </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -3,6 +3,45 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { ChartBarIcon, CurrencyDollarIcon, UserGroupIcon, ShieldCheckIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import './App.css'
 
+// TypeScript declaration for global function
+declare global {
+  interface Window {
+    open3CXChat?: () => void;
+  }
+}
+
+// Function to open 3CX chat modal
+const openChatModal = () => {
+  // Use the global function from index.html
+  if (typeof window !== 'undefined' && window.open3CXChat) {
+    console.log('Calling global open3CXChat function...');
+    window.open3CXChat();
+  } else {
+    console.log('Global open3CXChat function not available, falling back to direct approach...');
+    // Fallback to direct approach
+    const findAndClickChatButton = (attempts = 0) => {
+      const chatButton = document.getElementById('wplc-chat-button') as HTMLButtonElement;
+      console.log('Attempt', attempts + 1, 'Chat button found:', chatButton);
+      
+      if (chatButton) {
+        console.log('Clicking chat button...');
+        chatButton.click();
+        return true;
+      } else if (attempts < 10) {
+        // Retry after 500ms if button not found
+        console.log('Chat button not found, retrying in 500ms...');
+        setTimeout(() => findAndClickChatButton(attempts + 1), 500);
+        return false;
+      } else {
+        console.log('Chat button not found after 10 attempts');
+        return false;
+      }
+    };
+    
+    findAndClickChatButton();
+  }
+};
+
 interface Section {
   id: string;
   title: string;
@@ -32,9 +71,12 @@ const sections: Section[] = [
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6"
         >
-          <button className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-xl hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 border border-black/10 w-full sm:w-auto">
+          {/* <button 
+            onClick={openChatModal}
+            className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-xl hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 border border-black/10 w-full sm:w-auto"
+          >
             Get in Touch
-          </button>
+          </button> */}
           {/* <button className="bg-white/90 text-black px-8 py-4 rounded-full font-bold text-lg border border-hulyPurple/20 hover:bg-hulyGlass transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-hulyBlue/40">
             Learn More
           </button> */}
@@ -329,30 +371,6 @@ const sections: Section[] = [
       </div>
     )
   },
-  {
-    id: 'contact',
-    title: 'Get in Touch',
-    content: (
-      <div className="max-w-3xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          className="p-6 sm:p-8 rounded-2xl text-center glass shadow-lg border border-black/5"
-        >
-          {/* <h3 className="section-title text-2xl mb-6">Ready to Invest?</h3> */}
-          <p className="text-secondary mb-6 sm:mb-8 text-base sm:text-lg">Join us in revolutionizing the cryptocurrency staking industry</p>
-          <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
-            <button className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg">
-              Get in Touch
-            </button>
-            {/* <button className="border-2 border-hulyPurple/20 text-black px-8 py-3 rounded-full font-bold hover:bg-hulyGlass transition-all duration-300">
-              Download Deck
-            </button> */}
-          </div>
-        </motion.div>
-      </div>
-    )
-  }
 ];
 
 function App() {
@@ -536,7 +554,7 @@ function App() {
                 {section.title}
               </button>
             ))}
-            <a
+            {/* <a
               href="#contact"
               onClick={() => {
                 setMobileMenuOpen(false);
@@ -545,7 +563,7 @@ function App() {
               className="bg-gradient-to-r from-hulyBlue to-hulyPurple text-black px-8 py-4 rounded-2xl font-bold shadow-lg hover:from-hulyPurple hover:to-hulyBlue transition-all duration-200 border border-black/10 text-xl mt-4 w-full text-center"
             >
               Get Started
-            </a>
+            </a> */}
           </motion.div>
         )}
       </AnimatePresence>
@@ -576,12 +594,12 @@ function App() {
             ))}
           </div>
           {/* CTA right, stack on mobile */}
-          <div className="flex items-center gap-1.5 sm:gap-2 ml-0 sm:ml-2 md:ml-3 lg:ml-4 mt-1 sm:mt-0 w-full sm:w-auto justify-center">
+          {/* <div className="flex items-center gap-1.5 sm:gap-2 ml-0 sm:ml-2 md:ml-3 lg:ml-4 mt-1 sm:mt-0 w-full sm:w-auto justify-center">
             <a href="#contact" onClick={() => navigateToSection(sections.length-1)}
               className="bg-gradient-to-r from-hulyBlue to-hulyPurple text-black px-3.5 sm:px-4 md:px-5 lg:px-6 py-1.5 sm:py-2 rounded-xl sm:rounded-full font-bold shadow-md hover:shadow-lg hover:from-hulyPurple hover:to-hulyBlue transition-all duration-200 border border-black/10 text-xs sm:text-sm md:text-base">
               Get Started
             </a>
-          </div>
+          </div> */}
         </div>
       </motion.nav>
 
