@@ -33,7 +33,7 @@ const sections: Section[] = [
           className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-6"
         >
           <button className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 rounded-2xl font-bold text-base sm:text-lg md:text-xl shadow-lg hover:shadow-xl hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 border border-black/10 w-full sm:w-auto">
-            Request Demo
+            Get in Touch
           </button>
           {/* <button className="bg-white/90 text-black px-8 py-4 rounded-full font-bold text-lg border border-hulyPurple/20 hover:bg-hulyGlass transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-hulyBlue/40">
             Learn More
@@ -179,10 +179,10 @@ const sections: Section[] = [
       <div className="space-y-8 sm:space-y-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {[
-            { value: '$2.1T', label: 'Total Crypto Market Cap', icon: <ChartBarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
-            { value: '$300B', label: 'Staking Market Size', icon: <CurrencyDollarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
-            { value: '25%', label: 'CAGR Growth', icon: <ChartBarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
-            { value: '50M+', label: 'Active Stakers', icon: <UserGroupIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> }
+            { value: '$2.5T', label: 'Total Crypto Market Cap (2024)', icon: <ChartBarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
+            { value: '$350B', label: 'Total Staked Assets', icon: <CurrencyDollarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
+            { value: '15%', label: 'CAGR Growth', icon: <ChartBarIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> },
+            { value: '2.5M+', label: 'Active Stakers', icon: <UserGroupIcon className="w-6 h-6 sm:w-8 sm:h-8 text-hulyPurple" /> }
           ].map((stat, index) => (
             <motion.div
               key={index}
@@ -202,9 +202,9 @@ const sections: Section[] = [
           <h3 className="section-title text-xl sm:text-2xl mb-4 sm:mb-6">Market Growth Projection</h3>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {[
-              { year: '2024', value: '$300B', growth: '25%' },
-              { year: '2025', value: '$375B', growth: '25%' },
-              { year: '2026', value: '$469B', growth: '25%' }
+              { year: '2024', value: '$350B', growth: '15%' },
+              { year: '2025', value: '$402B', growth: '15%' },
+              { year: '2026', value: '$462B', growth: '15%' }
             ].map((projection, index) => (
               <motion.div
                 key={index}
@@ -343,7 +343,7 @@ const sections: Section[] = [
           <p className="text-secondary mb-6 sm:mb-8 text-base sm:text-lg">Join us in revolutionizing the cryptocurrency staking industry</p>
           <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4">
             <button className="bg-gradient-to-r from-hulyPurple to-hulyBlue text-black px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-bold hover:from-hulyBlue hover:to-hulyPurple transition-all duration-300 shadow-lg hover:shadow-xl text-base sm:text-lg">
-              Schedule a Call
+              Get in Touch
             </button>
             {/* <button className="border-2 border-hulyPurple/20 text-black px-8 py-3 rounded-full font-bold hover:bg-hulyGlass transition-all duration-300">
               Download Deck
