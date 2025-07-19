@@ -11,36 +11,36 @@ declare global {
 }
 
 // Function to open 3CX chat modal
-const openChatModal = () => {
-  // Use the global function from index.html
-  if (typeof window !== 'undefined' && window.open3CXChat) {
-    console.log('Calling global open3CXChat function...');
-    window.open3CXChat();
-  } else {
-    console.log('Global open3CXChat function not available, falling back to direct approach...');
-    // Fallback to direct approach
-    const findAndClickChatButton = (attempts = 0) => {
-      const chatButton = document.getElementById('wplc-chat-button') as HTMLButtonElement;
-      console.log('Attempt', attempts + 1, 'Chat button found:', chatButton);
+// const openChatModal = () => {
+//   // Use the global function from index.html
+//   if (typeof window !== 'undefined' && window.open3CXChat) {
+//     console.log('Calling global open3CXChat function...');
+//     window.open3CXChat();
+//   } else {
+//     console.log('Global open3CXChat function not available, falling back to direct approach...');
+//     // Fallback to direct approach
+//     const findAndClickChatButton = (attempts = 0) => {
+//       const chatButton = document.getElementById('wplc-chat-button') as HTMLButtonElement;
+//       console.log('Attempt', attempts + 1, 'Chat button found:', chatButton);
       
-      if (chatButton) {
-        console.log('Clicking chat button...');
-        chatButton.click();
-        return true;
-      } else if (attempts < 10) {
-        // Retry after 500ms if button not found
-        console.log('Chat button not found, retrying in 500ms...');
-        setTimeout(() => findAndClickChatButton(attempts + 1), 500);
-        return false;
-      } else {
-        console.log('Chat button not found after 10 attempts');
-        return false;
-      }
-    };
+//       if (chatButton) {
+//         console.log('Clicking chat button...');
+//         chatButton.click();
+//         return true;
+//       } else if (attempts < 10) {
+//         // Retry after 500ms if button not found
+//         console.log('Chat button not found, retrying in 500ms...');
+//         setTimeout(() => findAndClickChatButton(attempts + 1), 500);
+//         return false;
+//       } else {
+//         console.log('Chat button not found after 10 attempts');
+//         return false;
+//       }
+//     };
     
-    findAndClickChatButton();
-  }
-};
+//     findAndClickChatButton();
+//   }
+// };
 
 interface Section {
   id: string;
